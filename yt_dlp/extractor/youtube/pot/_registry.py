@@ -1,4 +1,4 @@
-from yt_dlp.globals import Indirect
+from ....globals import Indirect
 
 _pot_providers = Indirect({})
 _ptp_preferences = Indirect(set())

@@ -4,9 +4,9 @@ import abc
 import enum
 import functools
 
-from yt_dlp.extractor.common import InfoExtractor
-from yt_dlp.utils import NO_DEFAULT, bug_reports_message, classproperty, traverse_obj
-from yt_dlp.version import __version__
+from ....extractor.common import InfoExtractor
+from ....utils import NO_DEFAULT, bug_reports_message, classproperty, traverse_obj
+from ....version import __version__
 
 # xxx: these could be generalized outside YoutubeIE eventually
 

@@ -7,18 +7,18 @@ import dataclasses
 import enum
 import typing
 
-from yt_dlp.extractor.youtube.pot._provider import (
+from ....extractor.youtube.pot._provider import (
     IEContentProvider,
     IEContentProviderError,
     register_preference_generic,
     register_provider_generic,
 )
-from yt_dlp.extractor.youtube.pot._registry import (
+from ....extractor.youtube.pot._registry import (
     _pot_cache_provider_preferences,
     _pot_cache_providers,
     _pot_pcs_providers,
 )
-from yt_dlp.extractor.youtube.pot.provider import PoTokenRequest
+from ....extractor.youtube.pot.provider import PoTokenRequest
 
 
 class PoTokenCacheProviderError(IEContentProviderError):

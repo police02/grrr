@@ -10,26 +10,26 @@ import typing
 import urllib.parse
 from collections.abc import Iterable
 
-from yt_dlp.extractor.youtube.pot._provider import (
+from ....extractor.youtube.pot._provider import (
     BuiltinIEContentProvider,
     IEContentProvider,
     IEContentProviderLogger,
 )
-from yt_dlp.extractor.youtube.pot._registry import (
+from ....extractor.youtube.pot._registry import (
     _pot_cache_provider_preferences,
     _pot_cache_providers,
     _pot_pcs_providers,
     _pot_providers,
     _ptp_preferences,
 )
-from yt_dlp.extractor.youtube.pot.cache import (
+from ....extractor.youtube.pot.cache import (
     CacheProviderWritePolicy,
     PoTokenCacheProvider,
     PoTokenCacheProviderError,
     PoTokenCacheSpec,
     PoTokenCacheSpecProvider,
 )
-from yt_dlp.extractor.youtube.pot.provider import (
+from ....extractor.youtube.pot.provider import (
     PoTokenProvider,
     PoTokenProviderError,
     PoTokenProviderRejectedRequest,
@@ -37,11 +37,11 @@ from yt_dlp.extractor.youtube.pot.provider import (
     PoTokenResponse,
     provider_bug_report_message,
 )
-from yt_dlp.utils import bug_reports_message, format_field, join_nonempty
+from ....utils import bug_reports_message, format_field, join_nonempty
 
 if typing.TYPE_CHECKING:
-    from yt_dlp.extractor.youtube.pot.cache import CacheProviderPreference
-    from yt_dlp.extractor.youtube.pot.provider import Preference
+    from ....extractor.youtube.pot.cache import CacheProviderPreference
+    from ....extractor.youtube.pot.provider import Preference
 
 
 class YoutubeIEContentProviderLogger(IEContentProviderLogger):

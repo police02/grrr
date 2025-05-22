@@ -4,9 +4,9 @@ import datetime as dt
 import typing
 from threading import Lock
 
-from yt_dlp.extractor.youtube.pot._provider import BuiltinIEContentProvider
-from yt_dlp.extractor.youtube.pot._registry import _pot_memory_cache
-from yt_dlp.extractor.youtube.pot.cache import (
+from .....extractor.youtube.pot._provider import BuiltinIEContentProvider
+from .....extractor.youtube.pot._registry import _pot_memory_cache
+from .....extractor.youtube.pot.cache import (
     PoTokenCacheProvider,
     register_preference,
     register_provider,

@@ -10,17 +10,17 @@ import functools
 import typing
 import urllib.parse
 
-from yt_dlp.cookies import YoutubeDLCookieJar
-from yt_dlp.extractor.youtube.pot._provider import (
+from ....cookies import YoutubeDLCookieJar
+from ....extractor.youtube.pot._provider import (
     IEContentProvider,
     IEContentProviderError,
     register_preference_generic,
     register_provider_generic,
 )
-from yt_dlp.extractor.youtube.pot._registry import _pot_providers, _ptp_preferences
-from yt_dlp.networking import Request, Response
-from yt_dlp.utils import traverse_obj
-from yt_dlp.utils.networking import HTTPHeaderDict
+from ....extractor.youtube.pot._registry import _pot_providers, _ptp_preferences
+from ....networking import Request, Response
+from ....utils import traverse_obj
+from ....utils.networking import HTTPHeaderDict
 
 __all__ = [
     'ExternalRequestFeature',
@@ -111,8 +111,8 @@ class PoTokenProvider(IEContentProvider, abc.ABC, suffix='PTP'):
 
     # Innertube Client Name.
     # For example, "WEB", "ANDROID", "TVHTML5".
-    # For a list of WebPO client names, see yt_dlp.extractor.youtube.pot.utils.WEBPO_CLIENTS.
-    # Also see yt_dlp.extractor.youtube._base.INNERTUBE_CLIENTS
+    # For a list of WebPO client names, see ....extractor.youtube.pot.utils.WEBPO_CLIENTS.
+    # Also see ....extractor.youtube._base.INNERTUBE_CLIENTS
     #  for a list of client names currently supported by the YouTube extractor.
     _SUPPORTED_CLIENTS: tuple[str] | None = ()
 

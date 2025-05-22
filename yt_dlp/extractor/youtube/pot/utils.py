@@ -8,8 +8,8 @@ import enum
 import re
 import urllib.parse
 
-from yt_dlp.extractor.youtube.pot.provider import PoTokenContext, PoTokenRequest
-from yt_dlp.utils import traverse_obj
+from ....extractor.youtube.pot.provider import PoTokenContext, PoTokenRequest
+from ....utils import traverse_obj
 
 __all__ = ['WEBPO_CLIENTS', 'ContentBindingType', 'get_webpo_content_binding']
 

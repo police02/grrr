@@ -125,14 +125,29 @@ class BuiltinIEContentProvider(IEContentProvider, abc.ABC):
     BUG_REPORT_MESSAGE = bug_reports_message(before='')
 
 
+# def register_provider_generic(
+#     provider,
+#     base_class,
+#     registry,
+# ):
+#     """Generic function to register a provider class"""
+#     assert issubclass(provider, base_class), f'{provider} must be a subclass of {base_class.__name__}'
+#     assert provider.PROVIDER_KEY not in registry, f'{base_class.__name__} {provider.PROVIDER_KEY} already registered'
+#     registry[provider.PROVIDER_KEY] = provider
+#     return provider
+
 def register_provider_generic(
     provider,
     base_class,
     registry,
 ):
     """Generic function to register a provider class"""
+
+    # ✅ [추가] 중복 등록 방지 코드
+    if provider.PROVIDER_KEY in registry:
+        return registry[provider.PROVIDER_KEY]
+
     assert issubclass(provider, base_class), f'{provider} must be a subclass of {base_class.__name__}'
-    assert provider.PROVIDER_KEY not in registry, f'{base_class.__name__} {provider.PROVIDER_KEY} already registered'
     registry[provider.PROVIDER_KEY] = provider
     return provider
 

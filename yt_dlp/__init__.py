@@ -1,10 +1,5 @@
 import sys
 
-# 현재 모듈(grrr)을 yt_dlp라는 이름으로 참조하도록 강제 등록
-import grrr
-sys.modules['yt_dlp'] = grrr
-
-
 if sys.version_info < (3, 9):
     raise ImportError(
         f'You are using an unsupported version of Python. Only Python versions 3.9 and above are supported by yt-dlp')  # noqa: F541
@@ -18,6 +13,18 @@ import optparse
 import os
 import re
 import traceback
+
+# -----------------------------------------------------------------------------------------
+# ✅ [추가] grrr 폴더의 상위 디렉토리를 sys.path 에 등록
+this_dir = os.path.dirname(__file__)
+parent_dir = os.path.abspath(os.path.join(this_dir, '..'))
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+# ✅ [추가] grrr 모듈을 yt_dlp 라는 이름으로 등록
+if 'yt_dlp' not in sys.modules:
+    sys.modules['yt_dlp'] = sys.modules[__name__]
+# -----------------------------------------------------------------------------------------
 
 from .cookies import SUPPORTED_BROWSERS, SUPPORTED_KEYRINGS, CookieLoadError
 from .downloader.external import get_external_downloader

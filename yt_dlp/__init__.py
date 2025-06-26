@@ -1,5 +1,10 @@
 import sys
 
+# 현재 모듈(grrr)을 yt_dlp라는 이름으로 참조하도록 강제 등록
+import grrr
+sys.modules['yt_dlp'] = grrr
+
+
 if sys.version_info < (3, 9):
     raise ImportError(
         f'You are using an unsupported version of Python. Only Python versions 3.9 and above are supported by yt-dlp')  # noqa: F541

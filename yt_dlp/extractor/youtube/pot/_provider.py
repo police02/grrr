@@ -151,7 +151,6 @@ def register_provider_generic(
     registry[provider.PROVIDER_KEY] = provider
     return provider
 
-
 def register_preference_generic(
     base_class,
     registry,
